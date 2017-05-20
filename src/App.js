@@ -1,21 +1,17 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { Admin, Resource } from 'admin-on-rest';
+import client from './rest/client';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
-}
+import SwitchTitleReducer from './reducers/SwitchTitleReducer';
+
+import { TypeList, TypeCreate, TypeEdit, TypeDelete } from './types';
+import { PermissionList, PermissionCreate } from './permission';
+
+const App = () => (
+    <Admin customReducers={{titleSwitched: SwitchTitleReducer}} title='Dolores Admin' restClient={client('http://127.0.0.1:3280/admin/v1')}>
+        <Resource name='type' list={TypeList} create={TypeCreate} edit={TypeEdit} remove={TypeDelete}/>
+        <Resource name='permission' list={PermissionList} create={PermissionCreate} />
+    </Admin>
+);
 
 export default App;
