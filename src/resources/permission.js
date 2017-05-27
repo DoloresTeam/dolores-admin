@@ -1,8 +1,8 @@
 import React from 'react';
-import { Create, Edit, Delete, ReferenceInput, CheckboxGroupInput, EditButton, SingleFieldList, ChipField, ReferenceManyField, DeleteButton, SimpleForm, TextInput, SelectInput, Datagrid, TextField, DisabledInput } from 'admin-on-rest';
+import { Create, ReferenceInput, CheckboxGroupInput, EditButton, SingleFieldList, ChipField, ReferenceManyField, DeleteButton, SimpleForm, TextInput, SelectInput, Datagrid, TextField } from 'admin-on-rest';
 // import { required, minLength, maxLength, minValue, maxValue, number, regex, email, choices } from 'admin-on-rest';
 import { required } from 'admin-on-rest';
-import DList from './ui/doloresList';
+import DList from '../ui/doloresList';
 
 export const PermissionList = (props) => (
     <DList {...props} title='Permission List'>
@@ -30,8 +30,8 @@ export const PermissionCreate = (props) => (
             ]}  optionText='name' optionValue='id' label='Category' defaultValue={`1`} />
             <TextInput source='cn' label='Name' validate={[required]}/>
             <TextInput source='description' label='Description' options={{ multiLine: true }}/>
-            <ReferenceInput label="Type" filter={{isUnit: true}} source="rbacType" reference="type" allowEmpty>
-                <CheckboxGroupInput optionText="cn" optionValue="id" />
+            <ReferenceInput label="Type" filter={{isUnit: true}} source="rbacType" reference="type" allowEmpty={true}>
+                <SelectInput optionText="cn" optionValue="id" validate={[required]}/>
             </ReferenceInput>
         </SimpleForm>
     </Create>

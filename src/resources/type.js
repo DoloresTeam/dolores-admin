@@ -2,7 +2,7 @@ import React from 'react';
 import { Create, Edit, Delete, EditButton, DeleteButton, SimpleForm, TextInput, SelectInput, Datagrid, TextField, DisabledInput } from 'admin-on-rest';
 // import { required, minLength, maxLength, minValue, maxValue, number, regex, email, choices } from 'admin-on-rest';
 import { required } from 'admin-on-rest';
-import DList from './ui/doloresList';
+import DList from '../ui/doloresList';
 
 export const TypeList = (props) => (
     <DList {...props} title='Type List'>
