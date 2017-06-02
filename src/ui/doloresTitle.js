@@ -15,7 +15,6 @@ class DoloresTitle extends React.Component {
             <div>
                 <sapn>{title}</sapn>
                 <FlatButton primary style={{left: 10}} icon={<ActionSwitch />} onClick={(e) => {
-                    console.log(this.props)
                     this.props.onClick(!(this.props.isDepartment || false))
                     this.props.switchTitle(this.props.resource, !(this.props.isDepartment || false))
                 }} />

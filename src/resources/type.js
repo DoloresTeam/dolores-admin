@@ -19,12 +19,12 @@ export const TypeList = (props) => (
 export const TypeCreate = (props) => (
     <Create {...props}>
         <SimpleForm >
-            <SelectInput source="category" choices={[
-                { id: `1`, name: 'Department' },
-                { id: `2`, name: 'Member' },
-            ]}  label='Category' defaultValue={`1`}/>
             <TextInput source='cn' label='Name' validate={[required]}/>
             <TextInput source='description' label='Description' options={{ multiLine: true }}/>
+            <SelectInput source="category" choices={[
+                { id: `department`, name: 'Department' },
+                { id: `member`, name: 'Member' },
+            ]}  label='Category' defaultValue={`department`}/>
         </SimpleForm>
     </Create>
 )
