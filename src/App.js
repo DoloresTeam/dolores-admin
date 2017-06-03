@@ -8,7 +8,7 @@ import SwitchTitleReducer from './reducers/SwitchTitleReducer';
 
 import { TypeList, TypeCreate, TypeEdit, TypeDelete } from './resources/type';
 import { PermissionList, PermissionCreate, PermissionEdit, PermissionDelete } from './resources/permission';
-import { RoleList } from './resources/role'
+import { RoleList, RoleCreate, RoleEdit, RoleDelete } from './resources/role'
 import { MemberList } from './resources/member'
 import { DepartmentList, DepartmentCreate, DepartmentEdit } from './resources/department'
 
@@ -25,7 +25,7 @@ const App = () => (
         <Resource name='permission' list={PermissionList} create={PermissionCreate} edit={PermissionEdit} remove={PermissionDelete} />
         <Resource name="u_permission" />
         <Resource name="p_permission" />
-        <Resource name='role' list={RoleList} icon={RoleIcon}/>
+        <Resource name='role' list={RoleList} create={RoleCreate} edit={RoleEdit} remove={RoleDelete} icon={RoleIcon}/>
         <Resource name='member' list={MemberList} icon={MemberIcon}/>
         <Resource name='department' list={DepartmentList} create={DepartmentCreate} edit={DepartmentEdit} icon={DepartmentIcon}/>
     </Admin>

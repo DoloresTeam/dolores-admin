@@ -1,7 +1,7 @@
 import React from 'react';
 import { Create, Edit, Delete, EditButton } from 'admin-on-rest'
 import { SingleFieldList, ChipField, ReferenceManyField, DeleteButton, Datagrid, TextField } from 'admin-on-rest';
-import { SimpleForm, DisabledInput, TextInput, SelectInput, ReferenceArrayInput, SelectArrayInput } from 'admin-on-rest'
+import { SimpleForm, DisabledInput, TextInput, SelectInput, ReferenceArrayInput, SelectArrayInput } from 'admin-on-rest';
 import { DependentInput } from 'aor-dependent-input';
 // import { required, minLength, maxLength, minValue, maxValue, number, regex, email, choices } from 'admin-on-rest';
 import { required } from 'admin-on-rest';
