@@ -9,7 +9,7 @@ import SwitchTitleReducer from './reducers/SwitchTitleReducer';
 import { TypeList, TypeCreate, TypeEdit, TypeDelete } from './resources/type';
 import { PermissionList, PermissionCreate, PermissionEdit, PermissionDelete } from './resources/permission';
 import { RoleList, RoleCreate, RoleEdit, RoleDelete } from './resources/role'
-import { MemberList } from './resources/member'
+import { MemberList, MemberCreate } from './resources/member'
 import { DepartmentList, DepartmentCreate, DepartmentEdit } from './resources/department'
 
 import MemberIcon from 'material-ui/svg-icons/social/group';
@@ -26,7 +26,7 @@ const App = () => (
         <Resource name="u_permission" />
         <Resource name="p_permission" />
         <Resource name='role' list={RoleList} create={RoleCreate} edit={RoleEdit} remove={RoleDelete} icon={RoleIcon}/>
-        <Resource name='member' list={MemberList} icon={MemberIcon}/>
+        <Resource name='member' list={MemberList} create={MemberCreate} icon={MemberIcon}/>
         <Resource name='department' list={DepartmentList} create={DepartmentCreate} edit={DepartmentEdit} icon={DepartmentIcon}/>
     </Admin>
 );
