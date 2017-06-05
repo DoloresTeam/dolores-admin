@@ -1,7 +1,7 @@
 import React from 'react'
 import { List, Datagrid, TextField } from 'admin-on-rest';
 import { ReferenceField, EditButton, DeleteButton } from 'admin-on-rest';
-import { Create, Edit, SimpleForm, DisabledInput, TextInput, ReferenceInput, SelectInput } from 'admin-on-rest';
+import { Create, Edit, Delete, SimpleForm, DisabledInput, TextInput, ReferenceInput, SelectInput } from 'admin-on-rest';
 import { required } from 'admin-on-rest';
 
 export const DepartmentList = (props) => (
@@ -10,6 +10,9 @@ export const DepartmentList = (props) => (
             <TextField source="id" sortable={false}/>
             <TextField label='Name' source="cn" sortable={false}/>
             <TextField source="description" sortable={false}/>
+            {/*<ReferenceField source="rbacType" reference="type" sortable={false} linkType="edit" allowEmpty={true}>*/}
+                {/*<TextField source="cn" />*/}
+            {/*</ReferenceField>*/}
             <ReferenceField label="Parent Department" source="parentID" reference="department" sortable={false} allowEmpty={true}>
                 <TextField source="cn" />
             </ReferenceField>
@@ -43,9 +46,10 @@ export const DepartmentEdit = (props) => (
             <ReferenceInput label="Department Type" source="rbacType" reference="type" filter={{isUnit: true}} allowEmpty={true}>
                 <SelectInput optionText="cn" />
             </ReferenceInput>
-            <ReferenceInput label="Parent Department" source="parentID" reference="department" allowEmpty={true}>
-                <SelectInput optionText="cn" />
-            </ReferenceInput>
         </SimpleForm>
     </Edit>
+);
+
+export const DepartmentDelete = (props) => (
+    <Delete {...props} />
 );
