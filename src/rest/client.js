@@ -43,6 +43,8 @@ export default (apiUrl, httpClient = fetchUtils.fetchJson) => {
     const convertRESTRequestToHTTP = (type, resource, params) => {
         let url = '';
         const options = {};
+        // 添加token 到header中
+        options.headers = new Headers({ Authorization: 'Dolores ' + localStorage.getItem('token') });
         switch (type) {
         case GET_LIST: {
             const { page, perPage } = params.pagination;
