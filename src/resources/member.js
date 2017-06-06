@@ -1,5 +1,5 @@
 import React from 'react'
-import { List, Datagrid, TextField } from 'admin-on-rest';
+import { List, Datagrid, TextField, ReferenceField } from 'admin-on-rest';
 import { Create, Delete, Edit, TabbedForm, FormTab, DeleteButton, EditButton } from 'admin-on-rest';
 import { TextInput, ReferenceInput, SelectInput, ReferenceArrayInput, SelectArrayInput } from 'admin-on-rest';
 import { email, regex, required } from 'admin-on-rest';
@@ -13,6 +13,12 @@ export const MemberList = (props) => (
             <TextField source="email" sortable={false}/>
             <TextField source="title" sortable={false}/>
             <TextField source="telephoneNumber" sortable={false}/>
+            <ReferenceField source="rbacType" reference="type" sortable={false} linkType="edit" allowEmpty={true}>
+                <TextField source="cn" />
+            </ReferenceField>
+            <ReferenceField label="Department" source="unitID" reference="department" sortable={false} allowEmpty={true}>
+                <TextField source="cn" />
+            </ReferenceField>
             <EditButton />
             <DeleteButton />
         </Datagrid>

@@ -10,9 +10,9 @@ export const DepartmentList = (props) => (
             <TextField source="id" sortable={false}/>
             <TextField label='Name' source="cn" sortable={false}/>
             <TextField source="description" sortable={false}/>
-            {/*<ReferenceField source="rbacType" reference="type" sortable={false} linkType="edit" allowEmpty={true}>*/}
-                {/*<TextField source="cn" />*/}
-            {/*</ReferenceField>*/}
+            <ReferenceField source="rbacType" reference="type" sortable={false} linkType="edit" allowEmpty={true}>
+                <TextField source="cn" />
+            </ReferenceField>
             <ReferenceField label="Parent Department" source="parentID" reference="department" sortable={false} allowEmpty={true}>
                 <TextField source="cn" />
             </ReferenceField>

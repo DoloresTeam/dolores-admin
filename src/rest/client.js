@@ -122,7 +122,7 @@ export default (apiUrl, httpClient = fetchUtils.fetchJson) => {
                 total: json.total,
             };
         case GET_MANY:
-            return { data: json };
+            return {data: json.data}
         case CREATE:
             return { data: { ...params.data, id: json.id } };
         default:
