@@ -30,15 +30,15 @@ export const PermissionCreate = (props) => (
             <TextInput source='cn' label='Name' validate={[required]}/>
             <TextInput source='description' label='Description' options={{ multiLine: true }}/>
             <SelectInput source="category" choices={[
-                { id: 'department', name: 'Department' },
-                { id: 'member', name: 'Member' },
-            ]}  optionText='name' optionValue='id' label='Category' defaultValue={`department`} parse={v => v === 'department' ? true : false}/>
-            <DependentInput dependsOn="category" value="department">
+                { id: 'Department', name: 'Department' },
+                { id: 'Member', name: 'Member' },
+            ]}  optionText='name' optionValue='id' label='Category' defaultValue={`Department`}/>
+            <DependentInput dependsOn="category" value="Department">
                 <ReferenceArrayInput label="Type" filter={{isUnit: true}} source="uType" reference="type" allowEmpty={true} options={{ fullWidth: true }}>
                     <SelectArrayInput optionText="cn" optionValue="id" validate={[required]}/>
                 </ReferenceArrayInput>
             </DependentInput>
-            <DependentInput dependsOn="category" value="member">
+            <DependentInput dependsOn="category" value="Member">
                 <ReferenceArrayInput label="Type" filter={{isUnit: false}} source="mType" reference="type" allowEmpty={true} options={{ fullWidth: true }}>
                     <SelectArrayInput optionText="cn" optionValue="id" validate={[required]}/>
                 </ReferenceArrayInput>

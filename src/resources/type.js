@@ -22,9 +22,9 @@ export const TypeCreate = (props) => (
             <TextInput source='cn' label='Name' validate={[required]}/>
             <TextInput source='description' label='Description' options={{ multiLine: true }}/>
             <SelectInput source="category" choices={[
-                { id: 'department', name: 'Department' },
-                { id: 'member', name: 'Member' },
-            ]}  label='Category' defaultValue={'department'}/>
+                { id: 'Department', name: 'Department' },
+                { id: 'Member', name: 'Member' },
+            ]}  label='Category' defaultValue={'Department'}/>
         </SimpleForm>
     </Create>
 )
