@@ -39,9 +39,9 @@ export const MemberCreate = (props) => (
                 <TextInput source="email" label="电子邮箱" validate={email}/>
             </FormTab>
             <FormTab label="职位">
-                <ReferenceInput label="部门" source="unitID" reference="department" allowEmpty={true}>
-                    <SelectInput optionText="cn" />
-                </ReferenceInput>
+                <ReferenceArrayInput label="部门" source="unitID" reference="department" allowEmpty={true}>
+                    <SelectArrayInput optionText="cn" />
+                </ReferenceArrayInput>
                 <TextInput source="title" label="职位" />
                 <ReferenceInput label="员工类别" source="rbacType" reference="type" filter={{isUnit: false}} allowEmpty={true}>
                     <SelectInput optionText="cn" />
