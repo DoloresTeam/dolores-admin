@@ -18,7 +18,7 @@ const fetchPagingCookie = (resource, page) => {
 
 const savePagingCookie = (resource, page, cookie) => {
     let key = resource + page
-    return pagingControlCookieCache[key] = cookie
+    pagingControlCookieCache[key] = cookie
 }
 
 /**
@@ -118,7 +118,7 @@ export default (apiUrl, httpClient = fetchUtils.fetchJson) => {
         switch (type) {
         case GET_LIST:
         case GET_MANY_REFERENCE:
-            savePagingCookie(resource, json.page, json.pageCookie);
+            savePagingCookie(resource, json.page, json.cookie);
             return {
                 data: json.data, // TODO 直接放在data 中是否可以读取到
                 total: json.total,

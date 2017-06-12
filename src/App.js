@@ -20,7 +20,7 @@ import TypeIcon from 'material-ui/svg-icons/action/view-module';
 import DashBoard from './dashboard'
 
 const App = () => (
-    <Admin authClient={authClient} dashboard={DashBoard} customReducers={{titleSwitched: SwitchTitleReducer}} title='Dolores Admin' restClient={client('http://127.0.0.1:3280/admin/v1')}>
+    <Admin authClient={authClient} dashboard={DashBoard} customReducers={{titleSwitched: SwitchTitleReducer}} title='Dolores Admin' restClient={client('http://www.dolores.store:3280/admin/v1')}>
         <Resource name='type' list={TypeList} create={TypeCreate} edit={TypeEdit} remove={TypeDelete} icon={TypeIcon}/>
         <Resource name='permission' list={PermissionList} create={PermissionCreate} edit={PermissionEdit} remove={PermissionDelete} />
         <Resource name="u_permission" />
