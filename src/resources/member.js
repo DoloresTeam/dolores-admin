@@ -6,7 +6,7 @@ import { email, regex, required } from 'admin-on-rest';
 import Pagination from '../ui/pagination';
 
 export const MemberList = (props) => (
-    <List {...props} pagination={<Pagination />}>
+    <List {...props} perPage={25} pagination={<Pagination />}>
         <Datagrid>
             <TextField source="name" sortable={false}/>
             <TextField source="cn" sortable={false}/>
@@ -17,7 +17,7 @@ export const MemberList = (props) => (
                 <TextField source="cn" />
             </ReferenceField>
             <ReferenceField label="Department" source="unitID" reference="department" sortable={false} allowEmpty={true}>
-                <TextField source="cn" />
+                <TextField source="ou" />
             </ReferenceField>
             <EditButton />
             <DeleteButton />
@@ -40,7 +40,7 @@ export const MemberCreate = (props) => (
             </FormTab>
             <FormTab label="职位">
                 <ReferenceArrayInput label="部门" source="unitID" reference="department" allowEmpty={true}>
-                    <SelectArrayInput optionText="cn" />
+                    <SelectArrayInput optionText="ou" />
                 </ReferenceArrayInput>
                 <TextInput source="title" label="职位" />
                 <ReferenceInput label="员工类别" source="rbacType" reference="type" filter={{isUnit: false}} allowEmpty={true}>
@@ -49,6 +49,7 @@ export const MemberCreate = (props) => (
                 <ReferenceArrayInput label="员工角色" source="rbacRole" reference="role" allowEmpty={true}>
                     <SelectArrayInput optionText="cn" optionValue="id" />
                 </ReferenceArrayInput>
+                <TextInput lable="优先级" source="priority"/>
             </FormTab>
         </TabbedForm>
     </Create>
@@ -69,7 +70,7 @@ export const MemberEdit = (props) => (
             </FormTab>
             <FormTab label="职位">
                 <ReferenceArrayInput label="部门" source="unitID" reference="department" allowEmpty={true}>
-                    <SelectArrayInput optionText="cn" />
+                    <SelectArrayInput optionText="ou" />
                 </ReferenceArrayInput>
                 <TextInput source="title" label="职位" />
                 <ReferenceInput label="员工类别" source="rbacType" reference="type" filter={{isUnit: false}} allowEmpty={true}>
@@ -78,6 +79,7 @@ export const MemberEdit = (props) => (
                 <ReferenceArrayInput label="员工角色" source="rbacRole" reference="role" allowEmpty={true}>
                     <SelectArrayInput optionText="cn" optionValue="id" />
                 </ReferenceArrayInput>
+                <TextInput lable="优先级" source="priority"/>
             </FormTab>
         </TabbedForm>
     </Edit>

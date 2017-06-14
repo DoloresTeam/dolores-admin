@@ -8,13 +8,13 @@ export const DepartmentList = (props) => (
     <List {...props} pagination={null}>
         <Datagrid>
             <TextField source="id" sortable={false}/>
-            <TextField label='Name' source="cn" sortable={false}/>
+            <TextField label='Name' source="ou" sortable={false}/>
             <TextField source="description" sortable={false}/>
             <ReferenceField source="rbacType" reference="type" sortable={false} linkType="edit" allowEmpty={true}>
-                <TextField source="cn" />
+                <TextField source="ou" />
             </ReferenceField>
             <ReferenceField label="Parent Department" source="parentID" reference="department" sortable={false} allowEmpty={true}>
-                <TextField source="cn" />
+                <TextField source="ou" />
             </ReferenceField>
             <EditButton />
             <DeleteButton />
@@ -25,14 +25,15 @@ export const DepartmentList = (props) => (
 export const DepartmentCreate = (props) => (
     <Create {...props}>
         <SimpleForm >
-            <TextInput source='cn' label='Name' validate={[required]}/>
+            <TextInput source='ou' label='Name' validate={[required]}/>
             <TextInput source='description' label='Description' options={{ multiLine: true }}/>
             <ReferenceInput label="Department Type" source="rbacType" reference="type" filter={{isUnit: true}} allowEmpty={true}>
-                <SelectInput optionText="cn" />
+                <SelectInput optionText="ou" />
             </ReferenceInput>
             <ReferenceInput label="Parent Department" source="parentID" reference="department" allowEmpty={true}>
-                <SelectInput optionText="cn" />
+                <SelectInput optionText="ou" />
             </ReferenceInput>
+            <TextInput lable="优先级" source="priority"/>
         </SimpleForm>
     </Create>
 );
@@ -41,11 +42,12 @@ export const DepartmentEdit = (props) => (
     <Edit {...props}>
         <SimpleForm>
             <DisabledInput label="ID" source="id" />
-            <TextInput source='cn' label='Name' validate={[required]}/>
+            <TextInput source='ou' label='Name' validate={[required]}/>
             <TextInput source='description' label='Description' options={{ multiLine: true }}/>
             <ReferenceInput label="Department Type" source="rbacType" reference="type" filter={{isUnit: true}} allowEmpty={true}>
-                <SelectInput optionText="cn" />
+                <SelectInput optionText="ou" />
             </ReferenceInput>
+            <TextInput lable="优先级" source="priority"/>
         </SimpleForm>
     </Edit>
 );
