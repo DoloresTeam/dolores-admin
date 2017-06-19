@@ -51,7 +51,7 @@ export default (apiUrl, httpClient = fetchUtils.fetchJson) => {
             const query = {
                 ...params.filter,
                 page: page,
-                pageSize: perPage,
+                pageSize: 100,
             };
             const pc = fetchPagingCookie(resource, page)
             if (pc !== undefined) {
@@ -70,7 +70,7 @@ export default (apiUrl, httpClient = fetchUtils.fetchJson) => {
                 ...params.filter,
                 [params.target]: params.id,
                 page: page,
-                pageSize: perPage,
+                pageSize: 100,
             };
             const pc = fetchPagingCookie(resource, page)
             if (pc !== undefined) {

@@ -14,9 +14,9 @@ class DoloresList extends Component {
                 filter={{isUnit: false}}
                 {...this.props}
                 pagination={<Pagination />}
-                perPage={25}
+                perPage={100}
                 title={<DoloresTitle title={this.props.title} resource={this.props.resource} onClick={(v) => {
-                    this.props.crudGetList(this.props.resource, {page: 1, perPage: 25}, {field: {}}, {isUnit: v});
+                    this.props.crudGetList(this.props.resource, {page: 1, perPage: 100}, {field: {}}, {isUnit: v});
                 }}/>}
             />
         )

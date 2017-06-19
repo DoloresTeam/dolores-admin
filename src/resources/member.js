@@ -6,7 +6,7 @@ import { email, regex, required } from 'admin-on-rest';
 import Pagination from '../ui/pagination';
 
 export const MemberList = (props) => (
-    <List {...props} perPage={25} pagination={<Pagination />}>
+    <List {...props} perPage={100} pagination={<Pagination />}>
         <Datagrid>
             <TextField source="name" sortable={false}/>
             <TextField source="cn" sortable={false}/>
