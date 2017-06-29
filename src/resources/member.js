@@ -35,7 +35,7 @@ export const MemberCreate = (props) => (
                     { id: '1', name: '男' },
                     { id: '0', name: '女' },
                 ]}  label='性别' />
-                <TextInput source="telephoneNumber" label="电话" validate={regex(/^1[3|4|5|8][0-9]\d{4,8}$/, 'Must be a valid phone number')}/>
+                <TextInput source="telephoneNumber" label="电话" validate={regex(/^1[3|4|5|8|7][0-9]\d{4,8}$/, 'Must be a valid phone number')}/>
                 <TextInput source="email" label="电子邮箱" validate={email}/>
             </FormTab>
             <FormTab label="职位">

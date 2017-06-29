@@ -3,7 +3,7 @@ import { AUTH_LOGIN, AUTH_LOGOUT, AUTH_ERROR, AUTH_CHECK } from 'admin-on-rest';
 export default (type, params) => {
     // called when the user attempts to log in
     if (type === AUTH_LOGIN) {
-        const request = new Request('http://127.0.0.1:3280/admin/login', {
+        const request = new Request('http://www.dolores.store:3280/admin/login', {
             method: 'POST',
             body: JSON.stringify(params),
             headers: new Headers({ 'Content-Type': 'application/json' }),

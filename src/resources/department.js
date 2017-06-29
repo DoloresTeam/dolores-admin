@@ -28,7 +28,7 @@ export const DepartmentCreate = (props) => (
             <TextInput source='ou' label='Name' validate={[required]}/>
             <TextInput source='description' label='Description' options={{ multiLine: true }}/>
             <ReferenceInput label="Department Type" source="rbacType" reference="type" filter={{isUnit: true}} allowEmpty={true}>
-                <SelectInput optionText="ou" />
+                <SelectInput optionText="cn" />G
             </ReferenceInput>
             <ReferenceInput label="Parent Department" source="parentID" reference="department" allowEmpty={true}>
                 <SelectInput optionText="ou" />
